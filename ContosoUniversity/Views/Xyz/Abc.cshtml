@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ContosoUniversity.Models.Student>
+@{
+    ViewBag.Title = "Abc";
+}
+
+
+<h2>This is the Abc.cshtml page under Views/Xyz</h2>
+@foreach (var item in Model)
+{
+    <h2> Student Name :   @item.FirstName @item.LastName </h2> 
+}
