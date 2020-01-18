@@ -12,25 +12,29 @@ namespace ContosoUniversity.Controllers
         // GET: Xyz
         public ActionResult Abc()
         {
+            Course c1 = new Course();
+            c1.CourseName = "Maths";
+            c1.TotalCredits = "4";
+
             Student alex = new Student();
             alex.FirstName = "Arun";
             alex.LastName = "Kumar";
 
             Student arun = new Student();
-            alex.FirstName = "Raj";
-            alex.LastName = "Kumar";
+            arun.FirstName = "Raj";
+            arun.LastName = "Kumar";
 
             Student arjun = new Student();
-            alex.FirstName = "Arjun";
-            alex.LastName = "Kumar";
+            arjun.FirstName = "Arjun";
+            arjun.LastName = "Kumar";
 
             Student ragu = new Student();
-            alex.FirstName = "Ragu";
-            alex.LastName = "Raj";
+            ragu.FirstName = "Ragu";
+            ragu.LastName = "Raj";
 
             Student ram = new Student();
-            alex.FirstName = "Ram";
-            alex.LastName = "Kumar";
+            ram.FirstName = "Ram";
+            ram.LastName = "Kumar";
 
             List<Student> students = new List<Student>();
             students.Add(alex);
@@ -38,7 +42,10 @@ namespace ContosoUniversity.Controllers
             students.Add(arjun);
             students.Add(ragu);
             students.Add(ram);
-            return View (students);
+            Course_Students obj = new Course_Students();
+            obj.course = c1;
+            obj.stud = students;
+            return View (obj);
         }
 
         public ActionResult Index()
