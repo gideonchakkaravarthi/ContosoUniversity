@@ -9,16 +9,16 @@ namespace ContosoUniversity.Controllers
     public class HomeController : Controller
     {
         //Action Method
-        public string Index()
+        public ActionResult Index()
         {
-            return "Hellow World";
+            return View();
         }
 
-        public string About()
+        public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return "This is the home Controller - About Method";
+            return View();
         }
 
         public ActionResult Contact()

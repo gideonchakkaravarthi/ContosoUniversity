@@ -1,11 +1,12 @@
-﻿@model ContosoUniversity.Models.Course_Student
+﻿@model  ContosoUniversity.ViewModels.Course_Students
+
 @{
     ViewBag.Title = "Abc";
 }
 
-
+<h2>Course Title : @Model.course.CourseName </h2><br />
 <h2>This is the Abc.cshtml page under Views/Xyz</h2>
-@foreach (var item in Model.Students)
+@foreach (var item in Model.students)
 {
     <h2> Student Name :   @item.FirstName @item.LastName </h2> 
 }

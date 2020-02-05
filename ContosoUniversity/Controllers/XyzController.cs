@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ContosoUniversity.Models;
+using ContosoUniversity.ViewModels;
 
 namespace ContosoUniversity.Controllers
 {
@@ -44,7 +45,7 @@ namespace ContosoUniversity.Controllers
             students.Add(ram);
             Course_Students obj = new Course_Students();
             obj.course = c1;
-            obj.stud = students;
+            obj.students = students;
             return View (obj);
         }
 
