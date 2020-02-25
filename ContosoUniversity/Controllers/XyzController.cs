@@ -10,43 +10,46 @@ namespace ContosoUniversity.Controllers
 {
     public class XyzController : Controller
     {
-        // GET: Xyz
+        private SchoolContext db = new SchoolContext();
         public ActionResult Abc()
         {
-            Course c1 = new Course();
-            c1.CourseName = "Maths";
-            c1.TotalCredits = "4";
+            var students = db.students.ToList();
+            return View(students);
 
-            Student alex = new Student();
-            alex.FirstName = "Arun";
-            alex.LastName = "Kumar";
+            //Course c1 = new Course();
+            //c1.CourseName = "Maths";
+            //c1.TotalCredits = "4";
 
-            Student arun = new Student();
-            arun.FirstName = "Raj";
-            arun.LastName = "Kumar";
+            //Student alex = new Student();
+            //alex.FirstName = "Arun";
+            //alex.LastName = "Kumar";
 
-            Student arjun = new Student();
-            arjun.FirstName = "Arjun";
-            arjun.LastName = "Kumar";
+            //Student arun = new Student();
+            //arun.FirstName = "Raj";
+            //arun.LastName = "Kumar";
 
-            Student ragu = new Student();
-            ragu.FirstName = "Ragu";
-            ragu.LastName = "Raj";
+            //Student arjun = new Student();
+            //arjun.FirstName = "Arjun";
+            //arjun.LastName = "Kumar";
 
-            Student ram = new Student();
-            ram.FirstName = "Ram";
-            ram.LastName = "Kumar";
+            //Student ragu = new Student();
+            //ragu.FirstName = "Ragu";
+            //ragu.LastName = "Raj";
 
-            List<Student> students = new List<Student>();
-            students.Add(alex);
-            students.Add(arun);
-            students.Add(arjun);
-            students.Add(ragu);
-            students.Add(ram);
-            Course_Students obj = new Course_Students();
-            obj.course = c1;
-            obj.students = students;
-            return View (obj);
+            //Student ram = new Student();
+            //ram.FirstName = "Ram";
+            //ram.LastName = "Kumar";
+
+            //List<Student> students = new List<Student>();
+            //students.Add(alex);
+            //students.Add(arun);
+            //students.Add(arjun);
+            //students.Add(ragu);
+            //students.Add(ram);
+            //Course_Students obj = new Course_Students();
+            //obj.course = c1;
+            //obj.students = students;
+            //return View (obj);
         }
 
         public ActionResult Index()
@@ -55,3 +58,4 @@ namespace ContosoUniversity.Controllers
         }
     }
 }
+ 
